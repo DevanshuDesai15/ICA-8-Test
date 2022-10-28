@@ -10,6 +10,7 @@ public class writetest {
 
     @Test
     public void checkOutput() throws IOException {
+        System.out.println("====== DEVANSHU DESAI == TEST ONE EXECUTED =======");
         urinals uri = new urinals();
         int output = 101010;
         uri.write(output);

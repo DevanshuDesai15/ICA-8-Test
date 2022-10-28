@@ -8,6 +8,7 @@ public class getUnoccupiedUrinalsTest {
 
     @Test
     public void getUnoccupiedUrinalsTestInput1(){
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
         urinals uri = new urinals();
         String input = "10001";
         int ans = uri.getUnoccupiedUrinals(input);

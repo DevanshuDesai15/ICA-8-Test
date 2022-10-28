@@ -8,6 +8,7 @@ import java.io.*;
 public class urinalstest {
     @Test
     public void readTestCheckString() throws IOException {
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
         BufferedWriter br = new BufferedWriter(new FileWriter("urinals.dat"));
         br.write("1000011\n1010");
         br.close();

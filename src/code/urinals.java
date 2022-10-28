@@ -23,4 +23,32 @@ public class urinals {
             return e.getMessage();
         }
     }
+
+    public static int getUnoccupiedUrinals(String urnal){
+        if (urnal.equals("0")) return 1;
+        if (urnal.equals("1")) return 0;
+
+        char[] find_urinals = urnal.toCharArray();
+        int counter = 0;
+
+        for (int i = 0; i < find_urinals.length - 1; i++) {
+            if (i == 0) {
+                if (find_urinals[i] == '0' && find_urinals[i + 1] == '0') {
+                    find_urinals[i] = '1';
+                    counter++;
+                }
+            }
+            if (i > 0) {
+                if (find_urinals[i] == '0' && find_urinals[i - 1] == '0' && find_urinals[i + 1] == '0') {
+                    find_urinals[i] = '1';
+                    counter++;
+                }
+            }
+        }
+        if (find_urinals[find_urinals.length - 1] == '0' && find_urinals[find_urinals.length - 2] == '0') {
+            counter++;
+        }
+        return counter;
+    }
+
 }

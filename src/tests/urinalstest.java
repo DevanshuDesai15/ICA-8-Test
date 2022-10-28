@@ -40,4 +40,14 @@ public class urinalstest {
         string = string.trim();
         Assertions.assertTrue(string.isEmpty());
     }
+    @Test
+    public void readTestNumberFormat() throws IOException {
+        BufferedWriter br = new BufferedWriter(new FileWriter("urinals.dat"));
+        br.write("abcd\n101010");
+        br.close();
+        urinals uri = new urinals();
+        String string = uri.readFile();
+        string = string.trim();
+        Assertions.assertEquals(string,"For input string: \"abcd\"");
+    }
 }

@@ -17,7 +17,7 @@ public class urinalstest {
         Assertions.assertEquals(string, "1000011\n1010");
     }
     @Test
-    public void readTestFileNotFoundException() throws IOException {
+    public void readTestFileNotFoundException()  {
         File file = new File("urinals.dat");
         if(file.exists())
         {
@@ -26,5 +26,18 @@ public class urinalstest {
         urinals uri = new urinals();
         String string = uri.readFile();
         Assertions.assertEquals(string,"urinals.dat (The system cannot find the file specified)");
+    }
+    @Test
+    public void readTestEmptyFile() throws IOException {
+        File file = new File("urinals.dat");
+        if(file.exists())
+        {
+            file.delete();
+        }
+        file.createNewFile();
+        urinals uri = new urinals();
+        String string = uri.readFile();
+        string = string.trim();
+        Assertions.assertTrue(string.isEmpty());
     }
 }

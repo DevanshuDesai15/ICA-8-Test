@@ -19,6 +19,8 @@ public class urinalstest {
     }
     @Test
     public void readTestFileNotFoundException()  {
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
+
         File file = new File("urinals.dat");
         if(file.exists())
         {
@@ -30,6 +32,8 @@ public class urinalstest {
     }
     @Test
     public void readTestEmptyFile() throws IOException {
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
+
         File file = new File("urinals.dat");
         if(file.exists())
         {
@@ -43,6 +47,8 @@ public class urinalstest {
     }
     @Test
     public void readTestNumberFormat() throws IOException {
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
+
         BufferedWriter br = new BufferedWriter(new FileWriter("urinals.dat"));
         br.write("abcd\n101010");
         br.close();

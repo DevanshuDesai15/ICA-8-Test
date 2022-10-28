@@ -17,6 +17,8 @@ public class getUnoccupiedUrinalsTest {
 
     @Test
     public void getUnoccupiedUrinalsTestNonEmptyUrinals(){
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
+
         urinals uri = new urinals();
         String input = "10011";
         int ans = uri.getUnoccupiedUrinals(input);
@@ -24,6 +26,8 @@ public class getUnoccupiedUrinalsTest {
     }
     @Test
     public void getUnoccupiedUrinalsTestLength(){
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
+
         urinals uri = new urinals();
         String input = "10010101010101010101000000101010101010101010101010";
         int ans = uri.getUnoccupiedUrinals(input);
@@ -32,6 +36,8 @@ public class getUnoccupiedUrinalsTest {
 
     @Test
     public void getUnoccupiedUrinalsTestLengthGreaterThan0(){
+        System.out.println("====== DEVANSHU DESAI == TESTS BELOW EXECUTED =======");
+
         urinals uri = new urinals();
         String input = "";
         int ans = uri.getUnoccupiedUrinals(input);

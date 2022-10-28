@@ -21,5 +21,11 @@ public class getUnoccupiedUrinalsTest {
         int ans = uri.getUnoccupiedUrinals(input);
         Assertions.assertEquals(ans,-1);
     }
-
+    @Test
+    public void getUnoccupiedUrinalsTestLength(){
+        urinals uri = new urinals();
+        String input = "10010101010101010101000000101010101010101010101010";
+        int ans = uri.getUnoccupiedUrinals(input);
+        Assertions.assertEquals(ans,-2);
+    }
 }

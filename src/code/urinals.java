@@ -26,6 +26,7 @@ public class urinals {
 
     public static int getUnoccupiedUrinals(String urnal){
         if (urnal.contains("11")) return -1;
+        if(urnal.length()>20) return -2;
         if (urnal.equals("0")) return 1;
         if (urnal.equals("1")) return 0;
 

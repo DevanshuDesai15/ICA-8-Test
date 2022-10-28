@@ -1,10 +1,36 @@
 package code;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class urinals {
 
-    public String readFile() {
+    public static void  main(String  args[]) throws IOException {
+        System.out.println("Input from 1.) file or 2.) CMD");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n==1)
+        {
+            String ouput = readFile();
+            String lines[] = ouput.split("\\r?\\n");
+            for (String input : lines)
+            {
+                int result = getUnoccupiedUrinals(input);
+                write(result);
+            }
+        }
+        else if(n==2)
+        {
+            System.out.println("Enter one urinal input:- ");
+            String input = sc.next();
+            int result = getUnoccupiedUrinals(input);
+            System.out.println("Final Result:- "+result);
+        }
+        else {
+            System.out.println("Enter valid Input");
+        }
+    }
+    public static String readFile() {
         StringBuilder resultStringBuilder = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader("urinals.dat"))) {
             String line;
@@ -24,7 +50,7 @@ public class urinals {
         }
     }
 
-    public int getUnoccupiedUrinals(String urnal){
+    public static int getUnoccupiedUrinals(String urnal){
         if (urnal.contains("11")) return -1;
         if(urnal.length()>20) return -2;
         if(urnal.length()<1) return -3;
@@ -54,7 +80,7 @@ public class urinals {
         return counter;
     }
 
-    public void write(int output) throws IOException {
+    public static void write(int output) throws IOException {
         String fileName = "rule.txt";
         File file = new File(fileName);
         if(!file.exists())

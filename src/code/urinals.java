@@ -24,7 +24,7 @@ public class urinals {
         }
     }
 
-    public static int getUnoccupiedUrinals(String urnal){
+    public int getUnoccupiedUrinals(String urnal){
         if (urnal.contains("11")) return -1;
         if(urnal.length()>20) return -2;
         if(urnal.length()<1) return -3;
@@ -54,4 +54,25 @@ public class urinals {
         return counter;
     }
 
+    public void write(int output) throws IOException {
+        String fileName = "rule.txt";
+        File file = new File(fileName);
+        if(!file.exists())
+        {
+            file.createNewFile();
+        }
+        else {
+            int i = 1;
+            while(file.exists())
+            {
+                fileName = "rule"+String.valueOf(i)+".txt";
+                i++;
+                file = new File(fileName);
+            }
+            file.createNewFile();
+        }
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+        writer.append(String.valueOf(output));
+        writer.close();
+    }
 }

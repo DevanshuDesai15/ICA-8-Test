@@ -28,4 +28,12 @@ public class getUnoccupiedUrinalsTest {
         int ans = uri.getUnoccupiedUrinals(input);
         Assertions.assertEquals(ans,-2);
     }
+
+    @Test
+    public void getUnoccupiedUrinalsTestLengthGreaterThan0(){
+        urinals uri = new urinals();
+        String input = "";
+        int ans = uri.getUnoccupiedUrinals(input);
+        Assertions.assertEquals(ans,-3);
+    }
 }

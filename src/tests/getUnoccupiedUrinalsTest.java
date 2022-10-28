@@ -14,5 +14,12 @@ public class getUnoccupiedUrinalsTest {
         Assertions.assertEquals(ans,1);
     }
 
+    @Test
+    public void getUnoccupiedUrinalsTestNonEmptyUrinals(){
+        urinals uri = new urinals();
+        String input = "10011";
+        int ans = uri.getUnoccupiedUrinals(input);
+        Assertions.assertEquals(ans,-1);
+    }
 
 }
